@@ -1,4 +1,4 @@
-_is_ssh_key_added() {
+is_ssh_key_added() {
   local result
 
   result=$(ssh-add -l 2>&1)
@@ -15,15 +15,19 @@ _is_ssh_key_added() {
   fi
 }
 
-_is_ssh_key_added
-is_ssh_key_added=$?
+load_ssh_agent() {
+  is_ssh_key_added
+  _is_ssh_key_added=$?
 
-if (( is_ssh_key_added == 2 )); then
-  eval "$(ssh-agent -s)" >/dev/null 2>&1
-fi
+  if (( _is_ssh_key_added == 2 )); then
+    eval "$(ssh-agent -s)" >/dev/null 2>&1
+  fi
 
-if (( is_ssh_key_added != 0 )); then
-  ssh-add >/dev/null 2>&1
-fi
+  if (( _is_ssh_key_added != 0 )); then
+    ssh-add >/dev/null 2>&1
+  fi
+}
 
-unset is_ssh_key_added
+load_ssh_agent
+unfunction is_ssh_key_added
+unfunction load_ssh_agent

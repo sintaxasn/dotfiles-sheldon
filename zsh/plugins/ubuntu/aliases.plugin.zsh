@@ -11,14 +11,14 @@ alias cl="capslock"
 
 # Set keyboard to Colemak
 cm() {
-  setxkbmap us -variant colemak
-  xset r 66
-  echo "Keyboard set to Colemak"
+setxkbmap us -variant colemak
+xset r 66
+echo "Keyboard set to Colemak"
 }
 
 # Set keyboard to QWERTY
 qw() {
-  setxkbmap us
-  xset -r 66
-  echo "Keyboard set to QWERTY"
+setxkbmap us
+xset -r 66
+echo "Keyboard set to QWERTY"
 }

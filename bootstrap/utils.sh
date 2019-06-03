@@ -428,6 +428,16 @@ symlink() {
   sleep 0.1
 }
 
+# Symlink a Zsh plugin.
+#
+# Arguments:
+#   $1 the file source relative to the dotfiles/zsh/plugins directory.
+#   $2 the name of the plugin in the ~/.zsh/plugins directory.
+symlink_zsh_plugin() {
+  local name=${2:-$1}
+  symlink "zsh/plugins/$1.plugin.zsh" ".zsh/plugins/$name.plugin.zsh"
+}
+
 # Sync an entire directory to another.
 #
 # Arguments:
@@ -513,24 +523,6 @@ clone_git_repository() {
   then
     execute "git clone --depth=1 $url $directory" "Clone $name"
   fi
-}
-
-clone_oh_my_zsh() {
-  if [ ! -n "$ZSH" ]
-  then
-    ZSH=~/.oh-my-zsh
-  fi
-  clone_git_repository \
-    "Oh My Zsh" \
-    "https://github.com/rossmacarthur/oh-my-zsh.git" \
-    "$ZSH"
-}
-
-clone_base16_shell_theme() {
-  clone_git_repository \
-    "Base16 Shell" \
-    "https://github.com/chriskempson/base16-shell.git" \
-    "$HOME/.config/base16-shell"
 }
 
 clone_vim_flake8_plugin() {

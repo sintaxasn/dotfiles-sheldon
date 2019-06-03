@@ -1,0 +1,22 @@
+#compdef nanocom
+
+_nanocom() {
+    local line
+
+    _arguments \
+        '(-h --help)'{-h,--help}'[show the help information and exit]' \
+        '(-v --version)'{-v,--version}'[show the version and exit]' \
+        '(-p --port)'{-p,--port}'[the serial port]:the serial port:->port' \
+        '(-b --baudrate)'{-b,--baudrate}'[the baudrate of the serial port]' \
+        '(-m --map)'{-m,--map}'[a character map]'
+
+
+    case "$state" in
+        port)
+            _files -g "/dev/tty*"
+            ;;
+    esac
+
+}
+
+_nanocom "$@"
