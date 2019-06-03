@@ -543,7 +543,7 @@ clone_vim_base16_themes() {
 }
 
 install_pip() {
-  if command_exists pip; then
+  if exists pip; then
     execute "pip install --upgrade pip" "PIP"
   else
     execute "curl -LsSo get-pip.py https://bootstrap.pypa.io/get-pip.py" "Download get-pip.py"
