@@ -7,13 +7,13 @@ Install packages and and my personal dotfiles on a new system.
 ### One liner
 
 ```bash
-bash -c "$(curl -LsS https://raw.github.com/rossmacarthur/dotfiles/master/bootstrap/remote.sh)"
+bash -c "$(curl -LsS https://raw.github.com/sintaxasn/dotfiles-sheldon/master/bootstrap/remote.sh)"
 ```
 
 **or**
 
 ```bash
-bash -c "$(wget -qO - https://raw.github.com/rossmacarthur/dotfiles/master/bootstrap/remote.sh)"
+bash -c "$(wget -qO - https://raw.github.com/sintaxasn/dotfiles-sheldon/master/bootstrap/remote.sh)"
 ```
 
 ### With repository
@@ -23,7 +23,7 @@ to update the dotfiles.
 
 Clone the repository with
 ```bash
-git clone https://github.com/rossmacarthur/dotfiles.git ~/.dotfiles
+git clone https://github.com/sintaxasn/dotfiles-sheldon.git ~/.dotfiles
 ```
 
 And run the bootstrap script using
