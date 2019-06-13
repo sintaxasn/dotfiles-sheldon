@@ -13,7 +13,6 @@ install_package "zsh" "Zsh"
 
 subheading "Python packages"
 install_pip
-install_pip_package "nanocom"
 install_pip_package "setuptools"
 install_pip_package "virtualenv"
 install_pip_package "wheel"
