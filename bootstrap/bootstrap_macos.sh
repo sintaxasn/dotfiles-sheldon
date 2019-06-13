@@ -56,7 +56,6 @@ symlink "zsh/zshrc"               ".zshrc"
 subheading "Scripts"
 symlink "bin/gensshkey.sh" ".local/bin/gensshkey"
 symlink "bin/ips.py"       ".local/bin/ips"
-symlink "bin/pdfshrink.sh" ".local/bin/pdfshrink"
 
 if [ "$INSTALL_PYTHON_TOOLS" = true ]
 then
