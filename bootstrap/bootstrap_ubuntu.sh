@@ -70,8 +70,6 @@ then
   subheading "Packages"
   install_python_package "awscli"
   install_python_package "flake8" "Flake8"
-  install_python_package "nanocom" "Nanocom"
-  install_python_package "passthesalt" "PassTheSalt"
 fi
 
 if [ "$INSTALL_RUST_TOOLS" = true ]
