@@ -36,7 +36,6 @@ symlink "zsh/plugins/sensor"   ".plugins"
 symlink "zsh/zshrc"            ".zshrc"
 
 subheading "Scripts"
-symlink "bin/femtocom.sh"  ".local/bin/femtocom"
 symlink "bin/gensshkey.sh" ".local/bin/gensshkey"
 symlink "bin/ips.py"       ".local/bin/ips"
 symlink "bin/resize.py"    ".local/bin/resize"
