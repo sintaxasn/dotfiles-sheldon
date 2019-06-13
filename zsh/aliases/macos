@@ -1,7 +1,70 @@
 #!/usr/bin/env zsh
 
+# ls
+alias la="exa -abghl --git"
+alias ls='exa'
+alias ll='exa -l'
+alias lll='exa -l | less'
+alias lla='exa -la'
+alias llt='exa -T'
+alias llfu='exa -bghHliS --git'
+
+# cp
+alias cp='cp -R'
+
+# scp
+alias scp='scp -r'
+alias grep='grep --color=auto'
+
+# mkdir
+alias mkdir='mkdir -p'
+
+# vi
+alias vi='nvim'
+alias vim='nvim'
+
+# ping
+alias ping='ping -c 3'
+
+# task
+alias t='task'
+
+# sudo
+alias s='sudo '
+alias se='sudoedit'
+
+# systemd
+alias sctl='systemctl'
+alias jctl='journalctl'
+
+# docker
+alias dm='docker-machine'
+alias d='docker'
+alias dc='docker-compose'
+
+# ansible
+alias ap='ansible-playbook'
+
+# git with hub
+alias git="hub"
+
+# Show local ip
+alias localip="ipconfig getifaddr en0"
+
+# Copy public key to clipboard:
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
 # Lock screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Trim trailing newline and copy to clipboard
 alias copy="tr -d '\n' | pbcopy"
+
+# Shortcut for capslock toggle script
+alias cl="capslock"
+
+# directories
+alias nas="cd /mnt/diskstation"
+alias nasdkr="cd /mnt/diskstation/containers"
+alias nasrpi="cd /mnt/diskstation/raspberrypi"
+
