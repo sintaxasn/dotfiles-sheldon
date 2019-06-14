@@ -51,7 +51,7 @@ install_package "neovim" "neovim"
 install_package "vim" "Vim"
 
 install_exa
-clone_powerline10k_theme
+# clone_powerline10k_theme
 
 subheading "Remote repositories"
 clone_oh_my_zsh
