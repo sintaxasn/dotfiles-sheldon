@@ -23,10 +23,12 @@ install_package "curl" "cURL"
 install_package "git" "Git"
 install_package "make"
 install_package "tmux"
+install_package "tmuxinator"
 install_package "xclip"
 install_package "vim" "Vim"
 install_package "wget" "Wget"
 install_package "zsh" "Zsh"
+install_package "unzip" "Unzip"
 
 subheading "Remote repositories"
 clone_oh_my_zsh
@@ -84,3 +86,10 @@ then
   install_rustup_component "rustfmt"
   install_cargo_package "cargo-edit"
 fi
+
+cd ~/
+wget -c https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+unzip exa-linux-x86_64-0.8.0.zip
+sudo mv exa-linux-x86_64 /usr/local/bin/exa
+sudo chmod +x /usr/local/bin/exa
+rm exa-linux-x86_64-0.8.0.zip
