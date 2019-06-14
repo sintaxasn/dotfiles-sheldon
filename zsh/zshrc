@@ -6,7 +6,6 @@ export PATH=$PATH:$HOME/.local/bin
 # Oh My Zsh
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.dotfiles/zsh
-export ZSH_THEME="powerlevel10k/powerlevel10k"
 export HIST_STAMPS="yyyy-mm-dd"
 
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -36,6 +35,8 @@ if [ -f "$HOME/.plugins" ]
 then
   plugins+=($(<"$HOME/.plugins"))
 fi
+
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source "$ZSH/oh-my-zsh.sh"
 
