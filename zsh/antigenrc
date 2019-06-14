@@ -1,0 +1,29 @@
+antigen use oh-my-zsh
+
+# oh-my-zsh plugins
+antigen bundle git
+antigen bundle bundler
+antigen bundle npm
+antigen bundle pip
+antigen bundle vagrant
+antigen bundle virtualenvwrapper
+antigen bundle history-substring-search
+
+# Non oh-my-zsh plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Platform dependant bundles
+if [[ 'uname' == 'Linux' ]]
+then
+    antigen bundle command-not-found
+elif [[ 'uname' == 'Darwin' ]]
+then
+    antigen bundle brew
+    antigen bundle iterm2
+    antigen bundle osx
+fi
+
+# Theme
+antigen theme romkatv/powerlevel10k
+
+antigen apply

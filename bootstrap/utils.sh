@@ -566,9 +566,6 @@ clone_powerline10k_theme() {
     "Powerline 10k" \
     "https://github.com/chriskempson/base16-vim.git" \
     "$HOME/.dotfiles/zsh/themes/powerline10k"
-  execute \
-    "cp $HOME/.vim/colors/base16/colors/*.vim $HOME/.vim/colors/" \
-    "Copy Base16 color schemes to ~/.vim/colors/"
 }
 
 install_exa() {

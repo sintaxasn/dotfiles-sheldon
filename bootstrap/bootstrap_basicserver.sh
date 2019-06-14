@@ -32,6 +32,7 @@ install_package "xclip"
 install_package "vim" "Vim"
 install_package "wget" "Wget"
 install_package "zsh" "Zsh"
+install_package "zsh-antigen" "Zsh Antigen"
 install_package "zsh-autosuggestions" "zsh-autosuggestions"
 install_package "zsh-syntax-highlighting" "zsh-syntax-highlighting"
 install_package "unzip" "Unzip"
@@ -49,18 +50,8 @@ install_package "nano" "nano"
 install_package "neovim" "neovim"
 install_package "vim" "Vim"
 
-
-
-
-
-
-
-
-
-
-
-
 install_exa
+clone_powerline10k_theme
 
 subheading "Remote repositories"
 clone_oh_my_zsh
