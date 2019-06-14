@@ -63,6 +63,9 @@ alias copy="xclip -selection clipboard"
 # Shortcut for capslock toggle script
 alias cl="capslock"
 
+# update-all
+alias update-all='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y'
+
 # directories
 alias nas="cd /mnt/diskstation"
 alias nasdkr="cd /mnt/diskstation/containers"
