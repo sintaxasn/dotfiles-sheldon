@@ -503,6 +503,17 @@ check_directory() {
   return 1
 }
 
+check_wsl() {
+
+sudo cat >> /etc/greetings.txt <<EOL
+[automount]
+enabled = true
+root = /mnt/
+options = "metadata,umask=22,fmask=111"
+EOL
+
+}
+
 # Clone a git repository to the given location.
 clone_git_repository() {
   local name=$1
@@ -548,6 +559,25 @@ clone_vim_base16_themes() {
   execute \
     "cp $HOME/.vim/colors/base16/colors/*.vim $HOME/.vim/colors/" \
     "Copy Base16 color schemes to ~/.vim/colors/"
+}
+
+clone_powerline10k_theme() {
+  clone_git_repository \
+    "Powerline 10k" \
+    "https://github.com/chriskempson/base16-vim.git" \
+    "$HOME/.dotfiles/zsh/themes/powerline10k"
+  execute \
+    "cp $HOME/.vim/colors/base16/colors/*.vim $HOME/.vim/colors/" \
+    "Copy Base16 color schemes to ~/.vim/colors/"
+}
+
+install_exa() {
+  cd ~/
+  wget -c https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+  unzip exa-linux-x86_64-0.8.0.zip
+  sudo mv exa-linux-x86_64 /usr/local/bin/exa
+  sudo chmod +x /usr/local/bin/exa
+  rm exa-linux-x86_64-0.8.0.zip
 }
 
 install_pip() {

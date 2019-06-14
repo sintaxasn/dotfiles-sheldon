@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+if [[ -f /proc/version ]] && grep -q "Microsoft" /proc/version; then
+  # Fix umask value if WSL didn't set it properly.
+  # https://github.com/Microsoft/WSL/issues/352
+  [[ "$(umask)" == "000" ]] && umask 022
+
+  cat << EOF | sudo tee /etc/wsl.conf
+[automount]
+enabled = true
+root = /mnt/
+options = "metadata,umask=22,fmask=111"
+EOF
+
+fi
+
 heading "Configuration"
 
 if confirm --before 1 "Install Python development tools?"
@@ -30,6 +44,8 @@ install_package "wget" "Wget"
 install_package "zsh" "Zsh"
 install_package "unzip" "Unzip"
 
+install_exa
+
 subheading "Remote repositories"
 clone_oh_my_zsh
 clone_base16_shell_theme
@@ -49,6 +65,8 @@ symlink "vscode/keybindings.json" ".config/Code/User/keybindings.json"
 symlink "zsh/aliases/ubuntu"      ".aliases"
 symlink "zsh/plugins/ubuntu"      ".plugins"
 symlink "zsh/zshrc"               ".zshrc"
+symlink "nano/nanorc"             ".nanorc"
+symlink "nano/nano"               ".nano"
 
 subheading "Scripts"
 symlink "bin/gensshkey.sh" ".local/bin/gensshkey"
