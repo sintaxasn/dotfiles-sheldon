@@ -563,9 +563,9 @@ clone_vim_base16_themes() {
 
 clone_powerline10k_theme() {
   clone_git_repository \
-    "Powerline 10k" \
-    "https://github.com/chriskempson/base16-vim.git" \
-    "$HOME/.dotfiles/zsh/themes/powerline10k"
+    "Powerlevel 10k" \
+    "https://github.com/romkatv/powerlevel10k.git" \
+    "$HOME/.dotfiles/zsh/themes/powerlevel10k"
 }
 
 install_exa() {
