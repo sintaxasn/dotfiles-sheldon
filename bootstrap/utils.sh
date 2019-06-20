@@ -459,7 +459,7 @@ else
     if ! exists brew
     then
       execute \
-        "echo | ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)'" \
+        "ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)'" \
         "Linuxbrew (install)"
     fi
     execute "brew update" "Linuxbrew (update)"
