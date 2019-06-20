@@ -456,13 +456,6 @@ then
   }
 else
   update_package_manager() {
-    if ! exists brew
-    then
-      execute \
-        "ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)'" \
-        "Linuxbrew (install)"
-    fi
-    execute "brew update" "Linuxbrew (update)"
     execute "sudo apt update" "APT (update)"
     execute "sudo apt -y upgrade" "APT (upgrade)"
     execute "sudo apt -y dist-upgrade" "APT (dist-upgrade)"
@@ -480,7 +473,6 @@ then
 else
   install_package() {
     local msg=${2:-$1}
-    execute "brew install $1 || brew upgrade $1" "$msg"
     execute "sudo apt -y install $1" "$msg"
   }
 fi
